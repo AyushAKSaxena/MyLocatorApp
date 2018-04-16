@@ -4,4 +4,7 @@
     <string name="google_maps_API_key">AIzaSyBeb3QYKgpdgGPl-zPKm2RQ_JthKByFXrM</string>
     <string name="direction_API_key">AIzaSyBSSUsEvxsuqQsXB3kvasHzzHe2F80PI1k</string>
     <string name="submit_button">Search</string>
+    <string name="walk">Walking</string>
+    <string name="transit">Metro</string>
+    <string name="driving">Driving</string>
 </resources>
