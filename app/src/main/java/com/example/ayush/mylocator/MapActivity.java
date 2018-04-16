@@ -120,7 +120,18 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
          return null;
         }
     }
-   
+    private void addMarkersToMap(DirectionsResult results, GoogleMap mMap) {
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(results.routes[0].legs[0].startLocation.lat,results.routes[0].legs[0].startLocation.lng))
+                .title(results.routes[0].legs[0].startAddress));
+        mMap.addMarker(new MarkerOptions()
+                .position(new LatLng(results.routes[0].legs[0].endLocation.lat,results.routes[0].legs[0].endLocation.lng))
+                .title(results.routes[0].legs[0].startAddress).snippet(getEndLocationTitle(results)));
+    }
+    private String getEndLocationTitle(DirectionsResult results){
+        return  "Time :"+ results.routes[0].legs[0].duration.humanReadable
+                + " Distance :" + results.routes[0].legs[0].distance.humanReadable;
+    }
 
 
 }
