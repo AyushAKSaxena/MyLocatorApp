@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fromLocation = (EditText) findViewById(R.id.fromLocation);
         toLocation = (EditText) findViewById(R.id.toLocation);
         submit = (Button) findViewById(R.id.Submit);
+        submit.setOnClickListener(this);
     }
 
     @Override
