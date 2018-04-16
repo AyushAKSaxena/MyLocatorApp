@@ -136,5 +136,24 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         List<LatLng> decodedPath = PolyUtil.decode(results.routes[0].overviewPolyline.getEncodedPath());
         mMap.addPolyline(new PolylineOptions().addAll(decodedPath));
     }
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.walkButton:
+                addMarkersToMap(walkingResult, mMap);
+                addPolyline(walkingResult, mMap);
+                break;
+            case R.id.driveButton:
+                addMarkersToMap(drivingResult, mMap);
+                addPolyline(drivingResult, mMap);
+                break;
+            case R.id.transitButton:
+                addMarkersToMap(transitResult, mMap);
+                addPolyline(transitResult, mMap);
+                break;
+            default:
+                break;
+        }
+    }
 }
